@@ -1,0 +1,37 @@
+header {
+  max-width: 80%;
+  margin-inline: auto;
+  margin-top: 3.5rem;
+
+  & > div {
+    justify-content: space-between;
+
+    & .logo-img {
+      background-image: url(../assets/logo-horizontal.svg);
+      width: 230px;
+      height: 58px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    & > .button {
+      line-height: 80%;
+    }
+  }
+}
+
+@media (width <= 30rem) {
+  header {
+    max-width: 90%;
+    margin-top: 1.25rem;
+    
+    & > div {
+
+      & .logo-img {
+        background-image: url(../assets/logo.svg);
+        width: 64px;
+        height: 48px;
+      }
+    }
+  }
+}

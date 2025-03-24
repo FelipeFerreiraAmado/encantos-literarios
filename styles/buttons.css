@@ -1,0 +1,40 @@
+a {
+  text-decoration: none;
+  font: var(--button);
+  color: var(--text-title);
+  z-index: 1;
+  position: relative;
+}
+
+.button {
+  display: inline-block;
+  border-radius: .5rem;
+  padding: .75rem 1.25rem;
+  background-color: var(--pink-dark);
+  cursor: pointer;
+  overflow: hidden;
+
+  position: relative;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 25%;
+    border-radius: 100%;
+
+    background-color: var(--pink-base);
+    z-index: -1;
+
+    scale: 0;
+    transition: scale 500ms;
+  }
+
+  &:hover::before {
+    scale: 2.3;
+    z-index: 1;
+  }
+}
