@@ -1,9 +1,9 @@
 header {
   max-width: 80%;
   margin-inline: auto;
-  margin-top: 3.5rem;
+  padding-top: 3.5rem;
 
-  & > div {
+  & > nav {
     justify-content: space-between;
 
     & .logo-img {
@@ -23,9 +23,9 @@ header {
 @media (width <= 30rem) {
   header {
     max-width: 90%;
-    margin-top: 1.25rem;
+    padding-top: 1.25rem;
     
-    & > div {
+    & > nav {
 
       & .logo-img {
         background-image: url(../assets/logo.svg);

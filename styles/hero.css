@@ -1,0 +1,214 @@
+#main {
+
+  & .hero {
+    position: relative;
+    /* overflow: hidden; */
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      background-image: url(../assets/hero/hero-background.png);
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: cover;
+
+      z-index: -1;
+      opacity: 0;
+      animation: appear 3s ease-in forwards;
+    }
+
+    & header {
+      animation: appear 1ms forwards;
+    }
+
+    & .hero-title {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      padding-top: 10.25rem;
+      padding-bottom: 29.375rem;
+      text-align: center;
+      
+      & h1 {
+        max-width: 41rem;
+        font: var(--title-lg);
+
+        opacity: 0;
+        animation: appear 3s ease-in forwards;
+      }
+
+      & p {
+        max-width: 35.5rem;
+        font: var(--body-lg);
+
+        opacity: 0;
+        animation: appear 3s 1s ease-in forwards;
+      }
+    }
+  }
+
+  & .sub-hero {
+    max-width: 85%;
+    margin-inline: auto;
+    margin-top: 6rem;
+    
+    position: relative;
+
+    &:hover img {
+      animation: grow 0.2s ease forwards;
+
+      &:nth-child(2) {
+        animation-delay: 0.7s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 1.4s;
+      }
+    }
+  
+    & img {
+      position: absolute;
+      scale: 0;
+      /* z-index: -1; */
+    }
+    
+    & img[src*="crystal-ball"] {
+      width: 4.5rem;
+      height: auto;
+      right: 0;
+      bottom: 20%;
+      transform: rotate(-20deg);
+    }
+
+    & img[src*="ouija"] {
+      width: 5rem;
+      height: auto;
+      left: 3.5%;
+      bottom: 20%;
+      transform: rotate(95deg);
+    }
+
+    & img[src*="spellbook"] {
+      width: 5.5rem;
+      height: auto;
+      top: 5%;
+      left: 44%;
+      transform: rotate(20deg);
+    }
+  
+    & .sub-hero-text {
+      padding: 7.125rem 2rem 9.875rem;
+
+      font: var(--subtitle);
+      text-align: center;
+      
+      &:hover span {
+        animation: contrast 0.2s ease-in forwards;
+
+        &:nth-child(2) {
+          animation-delay: 0.7s;
+        }
+
+        &:nth-child(3) {
+          animation-delay: 1.4s;
+        }
+      }
+
+      & span {
+        filter: contrast(0);
+      }
+
+      & strong {
+        color: var(--blue-light);
+      }
+    }
+  }
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes contrast {
+  from {
+    filter: contrast(0);
+  }
+  
+  to {
+    filter: contrast(1);
+  }
+}
+
+@keyframes grow {
+  to {
+    scale: 1;
+  }
+}
+
+@media (width <= 30rem) {
+  #main {
+
+    & .hero {
+
+      & .hero-title {
+        gap: 1rem;
+        padding-top: 3rem;
+        padding-bottom: 12rem;
+
+        & h1 {
+          max-width: 80%;
+          font-size: 1.75rem;
+        }
+
+        & p {
+          max-width: 90%;
+          font-size: .875rem;
+        }
+      }
+    }
+
+    & .sub-hero {
+      max-width: 90%;
+
+      & .sub-hero-text {
+        font-size: 1rem;
+        line-height: 140%;
+      }
+
+      & img[src*="crystal-ball"] {
+        width: 2.5rem;
+        transform: rotate(20deg);
+        bottom: 10%;
+        right: 8%;
+      }
+      
+      & img[src*="spellbook"] {
+        width: 2.5rem;
+        transform: rotate(20deg);
+        top: 3%;
+        left: 60%;
+      }
+
+      & img[src*="ouija"] {
+        width: 2rem;
+        transform: rotate(-30deg);
+        bottom: 12%;
+        left: 8%;
+      }
+
+      & .sub-hero-text {
+        padding-block: 3rem;
+        padding-inline: 0;
+      }
+    }
+  }
+}
+
+/* @keyframes  */
