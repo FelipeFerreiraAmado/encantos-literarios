@@ -55,6 +55,8 @@
 html {
   font: var(--body-md);
   color: var(--text-body);
+
+  /* zoom: 60%; */
 }
 
 body {

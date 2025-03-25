@@ -1,4 +1,27 @@
 #main {
+  position: relative;
+  overflow: hidden;
+
+  &::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150%;
+
+    background-image: url(../assets/hero/blur-hero.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+
+    z-index: -2;
+  
+    filter: saturate(1);
+
+    opacity: 0;
+    animation: appear 3s ease-in forwards;
+  }
 
   & .hero {
     position: relative;
@@ -56,54 +79,29 @@
     max-width: 85%;
     margin-inline: auto;
     margin-top: 6rem;
-    
     position: relative;
-
-    &:hover {
-      & .sub-hero-text span {
-        animation: contrast 0.2s ease-in forwards;
-
-        &:nth-child(2) {
-          animation-delay: 0.7s;
-        }
-
-        &:nth-child(3) {
-          animation-delay: 1.4s;
-        }
-      }
-
-      & img {
-        animation: grow 0.2s ease forwards;
-      }
-    }
     
     & img {
       position: absolute;
       scale: 0;
-      transform-origin: center;
-      transition: transform 0.3s ease;
 
-      &:nth-child(2) {
-        animation-delay: 0.7s;
-      }
-
-      &:nth-child(3) {
-        animation-delay: 1.4s;
+      transition: 
+      scale 0.5s ease,
+      transform 0.3s ease;
+    }
+    
+    & img[src*="spellbook"] {
+      width: 5.5rem;
+      height: auto;
+      top: 5%;
+      left: 44%;
+      transform: rotate(20deg);
+      
+      &:hover {
+        transform: scale(1.1) rotate(30deg);
       }
     }
     
-    & img[src*="crystal-ball"] {
-      width: 4.5rem;
-      height: auto;
-      right: 0;
-      bottom: 20%;
-      transform: rotate(-20deg);
-
-      &:hover {
-        transform: scale(1.1) rotate(0deg);
-      }
-    }
-
     & img[src*="ouija"] {
       width: 5rem;
       height: auto;
@@ -111,20 +109,24 @@
       bottom: 20%;
       transform: rotate(95deg);
 
+      transition: scale 0.5s 0.7s ease;
+      
       &:hover {
         transform: scale(1.1) rotate(105deg);
       }
     }
 
-    & img[src*="spellbook"] {
-      width: 5.5rem;
+    & img[src*="crystal-ball"] {
+      width: 4.5rem;
       height: auto;
-      top: 5%;
-      left: 44%;
-      transform: rotate(20deg);
+      right: 0;
+      bottom: 20%;
+      transform: rotate(-13deg);
+
+      transition: scale 0.5s 1.4s ease;
 
       &:hover {
-        transform: scale(1.1) rotate(30deg);
+        transform: scale(1.1) rotate(0deg);
       }
     }
   
@@ -136,30 +138,49 @@
       & span {
         filter: contrast(0);
         transition: filter 0.5s ease;
+
+        &:nth-child(2) {
+          transition-delay: 0.7s;
+        }
+
+        &:nth-child(3) {
+          transition-delay: 1.4s;
+        }
       }
 
       & strong {
         color: var(--blue-light);
       }
     }
+
+    &:hover {
+      & .sub-hero-text span {
+        filter: contrast(1);
+      }
+  
+      & img {
+        scale: 1;
+        transition: scale 0.3s ease,
+        transform 0.5s ease;
+
+        &:nth-child(2) {
+          transition: scale 0.3s 0.7s ease,
+          transform 0.5s ease;
+        }
+
+        &:nth-child(3) {
+          transition: scale 0.3s 1.4s ease,
+          transform 0.5s ease;
+        }
+      }
+    }
   }
+
 }
 
 @keyframes appear {
   to {
     opacity: 1;
-  }
-}
-
-@keyframes contrast {  
-  to {
-    filter: contrast(1);
-  }
-}
-
-@keyframes grow {
-  to {
-    scale: 1;
   }
 }
 
