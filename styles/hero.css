@@ -59,55 +59,8 @@
     
     position: relative;
 
-    &:hover img {
-      animation: grow 0.2s ease forwards;
-
-      &:nth-child(2) {
-        animation-delay: 0.7s;
-      }
-
-      &:nth-child(3) {
-        animation-delay: 1.4s;
-      }
-    }
-  
-    & img {
-      position: absolute;
-      scale: 0;
-      /* z-index: -1; */
-    }
-    
-    & img[src*="crystal-ball"] {
-      width: 4.5rem;
-      height: auto;
-      right: 0;
-      bottom: 20%;
-      transform: rotate(-20deg);
-    }
-
-    & img[src*="ouija"] {
-      width: 5rem;
-      height: auto;
-      left: 3.5%;
-      bottom: 20%;
-      transform: rotate(95deg);
-    }
-
-    & img[src*="spellbook"] {
-      width: 5.5rem;
-      height: auto;
-      top: 5%;
-      left: 44%;
-      transform: rotate(20deg);
-    }
-  
-    & .sub-hero-text {
-      padding: 7.125rem 2rem 9.875rem;
-
-      font: var(--subtitle);
-      text-align: center;
-      
-      &:hover span {
+    &:hover {
+      & .sub-hero-text span {
         animation: contrast 0.2s ease-in forwards;
 
         &:nth-child(2) {
@@ -119,8 +72,70 @@
         }
       }
 
+      & img {
+        animation: grow 0.2s ease forwards;
+      }
+    }
+    
+    & img {
+      position: absolute;
+      scale: 0;
+      transform-origin: center;
+      transition: transform 0.3s ease;
+
+      &:nth-child(2) {
+        animation-delay: 0.7s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 1.4s;
+      }
+    }
+    
+    & img[src*="crystal-ball"] {
+      width: 4.5rem;
+      height: auto;
+      right: 0;
+      bottom: 20%;
+      transform: rotate(-20deg);
+
+      &:hover {
+        transform: scale(1.1) rotate(0deg);
+      }
+    }
+
+    & img[src*="ouija"] {
+      width: 5rem;
+      height: auto;
+      left: 3.5%;
+      bottom: 20%;
+      transform: rotate(95deg);
+
+      &:hover {
+        transform: scale(1.1) rotate(105deg);
+      }
+    }
+
+    & img[src*="spellbook"] {
+      width: 5.5rem;
+      height: auto;
+      top: 5%;
+      left: 44%;
+      transform: rotate(20deg);
+
+      &:hover {
+        transform: scale(1.1) rotate(30deg);
+      }
+    }
+  
+    & .sub-hero-text {
+      padding: 7.125rem 2rem 9.875rem;
+      font: var(--subtitle);
+      text-align: center;
+
       & span {
         filter: contrast(0);
+        transition: filter 0.5s ease;
       }
 
       & strong {
@@ -136,11 +151,7 @@
   }
 }
 
-@keyframes contrast {
-  from {
-    filter: contrast(0);
-  }
-  
+@keyframes contrast {  
   to {
     filter: contrast(1);
   }
@@ -187,6 +198,10 @@
         transform: rotate(20deg);
         bottom: 10%;
         right: 8%;
+
+        &:hover {
+          transform: scale(1.1) rotate(30deg);
+        }
       }
       
       & img[src*="spellbook"] {
@@ -201,6 +216,10 @@
         transform: rotate(-30deg);
         bottom: 12%;
         left: 8%;
+
+        &:hover {
+          transform: scale(1.1) rotate(-10deg);
+        }
       }
 
       & .sub-hero-text {
@@ -210,5 +229,3 @@
     }
   }
 }
-
-/* @keyframes  */
