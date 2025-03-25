@@ -20,7 +20,7 @@ header {
   }
 }
 
-@media (width <= 30rem) {
+@media (width <= 37.5rem) {
   header {
     max-width: 90%;
     padding-top: 1.25rem;
@@ -33,5 +33,12 @@ header {
         height: 48px;
       }
     }
+  }
+}
+
+@media (width >= 37.5rem) and (width <= 62.5rem) {
+  header {
+    max-width: 90%;
+    padding-top: 2.5rem;
   }
 }

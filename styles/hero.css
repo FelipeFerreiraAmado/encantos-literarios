@@ -45,10 +45,6 @@
       animation: appear 3s ease-in forwards;
     }
 
-    & header {
-      animation: appear 1ms forwards;
-    }
-
     & .hero-title {
       flex-direction: column;
       align-items: center;
@@ -181,72 +177,5 @@
 @keyframes appear {
   to {
     opacity: 1;
-  }
-}
-
-@media (width <= 30rem) {
-  #main {
-
-    & .hero {
-
-      & .hero-title {
-        gap: 1rem;
-        padding-top: 3rem;
-        padding-bottom: 12rem;
-
-        & h1 {
-          max-width: 80%;
-          font-size: 1.75rem;
-        }
-
-        & p {
-          max-width: 90%;
-          font-size: .875rem;
-        }
-      }
-    }
-
-    & .sub-hero {
-      max-width: 90%;
-
-      & .sub-hero-text {
-        font-size: 1rem;
-        line-height: 140%;
-      }
-
-      & img[src*="crystal-ball"] {
-        width: 2.5rem;
-        transform: rotate(20deg);
-        bottom: 10%;
-        right: 8%;
-
-        &:hover {
-          transform: scale(1.1) rotate(30deg);
-        }
-      }
-      
-      & img[src*="spellbook"] {
-        width: 2.5rem;
-        transform: rotate(20deg);
-        top: 3%;
-        left: 60%;
-      }
-
-      & img[src*="ouija"] {
-        width: 2rem;
-        transform: rotate(-30deg);
-        bottom: 12%;
-        left: 8%;
-
-        &:hover {
-          transform: scale(1.1) rotate(-10deg);
-        }
-      }
-
-      & .sub-hero-text {
-        padding-block: 3rem;
-        padding-inline: 0;
-      }
-    }
   }
 }
