@@ -74,7 +74,7 @@
   & .sub-hero {
     max-width: 85%;
     margin-inline: auto;
-    margin-top: 6rem;
+    margin-block: 6rem 5rem;
     position: relative;
     
     & img {
