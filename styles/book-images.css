@@ -1,0 +1,39 @@
+:root {
+  --arrow-alone-width: 180px;
+}
+
+img[src*="main-book"] {
+  z-index: 5;
+
+  width: calc(934px * 0.5);
+  height: auto;
+}
+
+img[src*="bookmark"]:not(img[src="./assets/book/arrow-bookmark.svg"]) {
+  width: calc(424px * 0.5);
+  height: auto;
+}
+
+img[src="./assets/book/bookmark-yellow.png"] {
+  z-index: 1;
+}
+
+img[src="./assets/book/pin.png"] {
+  width: calc(444px * 0.5);
+  height: auto;
+}
+
+img[src="./assets/book/arrow-alone.svg"] {
+  width: var(--arrow-alone-width);
+  height: auto;
+}
+
+img[src="./assets/book/arrow-bookmark.svg"] {
+  width: 155px;
+  height: auto;
+}
+
+img[src="./assets/book/arrow-pin.svg"] {
+  width: 108px;
+  height: auto;
+}
