@@ -37,3 +37,32 @@ img[src="./assets/book/arrow-pin.svg"] {
   width: 108px;
   height: auto;
 }
+
+@media (width <= 62.5rem) {
+
+  img[src*="main-book"] {
+    width: calc(934px * 0.2);
+
+    /* opacity: .2; */
+  }
+  
+  img[src*="bookmark"]:not(img[src="./assets/book/arrow-bookmark.svg"]) {
+    width: calc(424px * 0.2);
+  }
+  
+  img[src="./assets/book/pin.png"] {
+    width: calc(444px * 0.2);
+  }
+  
+  img[src="./assets/book/arrow-alone.svg"] {
+    width: calc(var(--arrow-alone-width) * .4);
+  }
+  
+  img[src="./assets/book/arrow-bookmark.svg"] {
+    width: calc(155px * .4);
+  }
+  
+  img[src="./assets/book/arrow-pin.svg"] {
+    width: calc(108px * .4);
+  }
+}
