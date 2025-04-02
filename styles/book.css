@@ -69,7 +69,7 @@ section#book {
 }
 
 .content-box {
-  margin-bottom: 17.375rem;
+  margin-bottom: 8rem;
   width: 100%;
   max-width: 85%;
   margin-inline: auto;
@@ -216,7 +216,133 @@ img[src*="bookmark"]:not(img[src="./assets/book/arrow-bookmark.svg"]) {
   }
 }
 
-@media (width <= 62.5rem) {
+@media (width <= 62.5rem) and (width > 31.25rem) {
+  section#book {
+    gap: 7rem;
+  }
+  
+  .book-title {
+    margin-top: 6.5rem;
+    gap: 8px;
+
+    & h2 {
+      font-size: 1.5rem;
+    }
+  
+    & > p {
+      font-size: .875rem;
+    }
+  
+    & > span {
+      width: 1.5rem;
+      height: 1.5rem;
+  
+      &:first-child {
+        top: 3px;
+        right: -1.5rem;
+      }
+  
+      &:nth-child(3) {
+        top: 3px;
+        left: -1.5rem;
+      }
+    }
+  }
+  
+  .content-box {
+    margin-bottom: 5.5rem;
+    max-width: 95%;
+    height: 19.937rem;
+  
+    &::before {
+      width: 100%;
+      height: 40rem;
+    }
+
+    & p {
+      font-size: .625rem;
+    }
+  
+    &:hover .arrow-alone {
+      transform: 
+      translate(calc(-310px * .56), calc(-340px * .58)) 
+      scale(1);
+    }
+  
+    &:hover .pin {
+      transform: 
+      translate(calc(-260px * .6), calc(190px * .6))  
+      scale(1);
+    }
+  
+    &:hover img[src="./assets/book/bookmark-yellow.png"] {
+      transform: 
+      rotate(12deg)
+      translate(calc(240px * .6), calc(-165px * .6)) 
+      scale(1);
+    }
+  
+    &:hover img[src="./assets/book/bookmark-purple.png"] {
+      transform: 
+      rotate(22deg)
+      translate(calc(360px * .6), calc(-155px * .6)) 
+      scale(1);
+    }
+  
+    &:hover .arrow-bookmark {
+      transform: 
+      translate(calc(410px * .53), calc(340px * .58)) 
+      scale(1);
+    }
+  }
+  
+  .arrow-alone {
+    display: flex;
+    width: unset;
+    gap: unset;
+
+    transform: 
+    translate(-10px, -95px)
+    scale(.5);
+
+    & p {
+      transform: translateX(-15px);
+    }
+  }
+  
+  .pin {
+    transform: 
+    translate(-15px, 50px)
+    rotate(25deg)
+    scale(.5);
+  
+    & :nth-child(1) {
+      transform: translate(-30px, 20px);
+    }
+  
+    & :nth-child(2) {
+      transform: translate(-20px, 20px);
+    }
+  }
+  
+  img[src*="bookmark"]:not(img[src="./assets/book/arrow-bookmark.svg"]) {
+    transform: translateX(50px)
+    scale(.5)
+  }
+  
+  .arrow-bookmark {
+    gap: 2px;
+  
+    transform: translate(70px, 65px)
+    scale(.5);
+  
+    & > p {
+      transform: translateX(-45px);
+    }
+  }
+}
+
+@media (width <= 31.25rem) {
   section#book {
     gap: 4rem;
   }

@@ -56,8 +56,9 @@
 html {
   font: var(--body-md);
   color: var(--text-body);
+  scroll-behavior: smooth;
 
-  /* zoom: 70%; */
+  /* zoom: 40%; */
 }
 
 body {
