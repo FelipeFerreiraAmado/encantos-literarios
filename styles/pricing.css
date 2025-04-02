@@ -29,7 +29,9 @@ section#pricing {
   }
 
   & .cards {
-    margin-bottom: 10rem;
+    overflow-y: visible;
+    padding-bottom: 10rem;
+    /* padding-top: 4.5rem; */
 
     width: 100%;
     max-width: 95%;
@@ -366,11 +368,12 @@ section#pricing {
     }
 
     & .cards {
-      margin-bottom: 6.5rem;
+      padding-bottom: 6.5rem;
       position: relative;
       display: block;
 
       overflow-x: auto;
+      overflow-y: hidden;
       white-space: nowrap;
       width: 100%;
       max-width: 100%;
