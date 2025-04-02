@@ -3,19 +3,33 @@ section#pricing {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* position: relative; */
+  position: relative;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/pricing/pricing-background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.5; 
+    z-index: -1; 
+  }
 
   & .pricing-header {
     text-align: center;
     margin-top: 12.125rem;
     font: var(--title-sm);
 
-    padding-bottom: 10rem;
+    padding-bottom: 3.5rem;
   }
 
   & .cards {
     margin-bottom: 10rem;
-    border: 1px solid deeppink;
 
     width: 100%;
     max-width: 95%;
@@ -26,6 +40,25 @@ section#pricing {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &::before{
+      content: "";
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 58rem;
+      height: 58rem;
+
+      background-color: var(--shape-base);
+      border-radius: 100%;
+      filter: blur(120px)
+      saturate(1);
+      opacity: .7;
+
+      z-index: -5;
+    }
 
     & > * {
       position: absolute;
@@ -212,6 +245,7 @@ section#pricing {
 @media (width >= 50rem) {
 
   section#pricing {
+    overflow: hidden;
 
     & .cards {
 
@@ -219,58 +253,143 @@ section#pricing {
         transform: rotate(-8deg)
         translateX(-300px);
 
-        transition: transform 1s cubic-bezier(.37,1.36,.32,.96);
+        transition: transform 1s cubic-bezier(.37,1.36,.32,.96),
+        background-color .5s ease,
+        box-shadow .5s ease;
       }
 
       &:hover .year-card {
         transform: rotate(8deg)
         translateX(300px);
 
-        transition: transform 1s cubic-bezier(.37,1.36,.32,.96);
+        transition: transform 1s cubic-bezier(.37,1.36,.32,.96),
+        background-color .5s ease,
+        box-shadow .5s ease;
       }
 
       & .month-card {
-        transition: transform 1s ease;
+        transition: all .5s ease;
 
         & img {
-          transition: transform .3s ease;
+          transition: all .5s ease;
         }
 
         &:hover .cards-stars-high img:first-child {
           transform: translate(-47px, -22px)
           rotate(-15deg);
 
-          transition: transform .3s ease;
+          transition: all .5s ease;
         }
 
         &:hover .cards-stars-high img:last-child {
           transform: translate(-82px, 0px)
           rotate(15deg);
 
-          transition: transform .3s ease;
+          transition: all .5s ease;
         }
       }
 
       & .year-card {
-        transition: transform 1s ease;
+        transition: all .5s ease;
 
         & img {
-          transition: transform .3s ease;
+          transition: all .5s ease;
         }
 
         &:hover .cards-stars-down img:first-child {
           transform: translate(55px, 32px)
           rotate(15deg);
 
-          transition: transform .3s ease;
+          transition: all .5s ease;
         }
 
         &:hover .cards-stars-down img:last-child {
           transform: translate(0px, 35px)
           rotate(-15deg);
 
-          transition: transform .3s ease;
+          transition: all .5s ease;
         }
+      }
+
+      & > * {
+        transition: all .5s ease;
+
+        &:hover {
+          background-color: var(--shape-hover);
+          border-color: var(--shape-hover);
+          box-shadow: 0px 0px 50px 10px #001933c2;
+          z-index: 5;
+
+          transform: translateY(-10px);
+
+          transition: all .5s ease;
+
+          &.month-card {
+            transform: rotate(-8deg) 
+            translate(-300px, -10px);
+
+            /* & .cards-stars-high img:first-child {
+              transform: translate(-47px, -12px)
+              rotate(-15deg);
+              transition: transform .5s ease;
+            }
+
+            & .cards-stars-high img:last-child {
+              transform: translate(-82px, 10px)
+              rotate(15deg);
+              transition: transform .5s ease;
+            } */
+          }
+
+          &.year-card {
+            transform: rotate(8deg)
+            translate(300px, -10px);
+          }
+
+        }
+      }
+    }
+  }
+}
+
+@media (width < 50rem) {
+  section#pricing {
+
+    & .pricing-header {
+      font-size: 1.5rem;
+      padding-bottom: 3rem;
+      margin-top: 6.5rem;
+    }
+
+    & div[class*="cards-stars"] {
+      display: none;
+    }
+
+    & .cards {
+      margin-bottom: 6.5rem;
+      position: relative;
+      display: block;
+
+      overflow-x: auto;
+      white-space: nowrap;
+      width: 100%;
+      max-width: 100%;
+      line-height: 0;
+      height: unset;
+
+      padding-inline: calc(50% - 9rem);
+
+      & > .main-card,
+      .month-card,
+      .year-card {
+        display: inline-block;
+        position: relative;
+        margin-right: 1rem;
+        vertical-align: middle;
+      }
+
+      & img[src*="bunny"] {
+        display: none;
       }
     }
   }
