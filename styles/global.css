@@ -5,6 +5,7 @@
   margin: 0;
   box-sizing: border-box;
   text-decoration: none;
+  list-style: none;
 }
 
 :root {
@@ -56,7 +57,7 @@ html {
   font: var(--body-md);
   color: var(--text-body);
 
-  /* zoom: 60%; */
+  /* zoom: 70%; */
 }
 
 body {

@@ -6,7 +6,8 @@ section#book {
   justify-content: center;
 
   position: relative;
-  overflow: hidden;
+  overflow-x: clip;
+  /* overflow: hidden; */
 
   z-index: 1;
 }
@@ -92,7 +93,8 @@ section#book {
 
     background-color: var(--pink-low);
     border-radius: 100%;
-    filter: blur(120px);
+    filter: blur(120px)
+    saturate(1);
     opacity: .4;
 
     z-index: -5;

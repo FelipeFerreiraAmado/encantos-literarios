@@ -1,0 +1,277 @@
+section#pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* position: relative; */
+
+  & .pricing-header {
+    text-align: center;
+    margin-top: 12.125rem;
+    font: var(--title-sm);
+
+    padding-bottom: 10rem;
+  }
+
+  & .cards {
+    margin-bottom: 10rem;
+    border: 1px solid deeppink;
+
+    width: 100%;
+    max-width: 95%;
+    height: 37.875rem;
+    margin-inline: auto;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > * {
+      position: absolute;
+    }
+
+    & > .main-card,
+    .month-card,
+    .year-card {
+      width: 18rem;
+      height: 26rem;
+      padding: 2rem 2rem 1.75rem;
+
+      background-color: var(--shape-base);
+      border-radius: 1.5rem;
+      border: 1px solid var(--shape-stroke);
+
+      position: absolute;
+
+      & > img[src*="bunny"] {
+        width: 45px;
+        height: 50px;
+        position: absolute;
+        top: -50px;
+      }
+
+      & .card-inner {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        & .card-title {
+          gap: 1.5rem;
+
+          & .main-card-title {
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+
+            position: relative;
+
+            & .payment-frequency {
+              font: var(--title-xs);
+              color: var(--pink-light);
+            }
+
+            & .popular {
+              position: absolute;
+              right: -5%;
+              top: -40%;
+
+              font: var(--tag);
+              text-transform: uppercase;
+              letter-spacing: 1.5px;
+
+              padding: 9px 20px;
+              background-color: var(--shape-stroke);
+              border-radius: 100px;
+            }
+          }
+
+          & .card-pricing {
+
+            & h4 {
+              font: var(--title-md);
+              padding-bottom: .5rem;
+
+              & small {
+                font: var(--title-xs);
+              }
+            }
+
+            & > p {
+              font: var(--body-sm);
+              color: var(--text-label);
+            }
+          }
+        }
+
+        & .card-details {
+
+          & img {
+            width: 14px;
+            height: auto;
+          }
+
+          & ul {
+            font: var(--body-xs);
+            display: flex;
+            flex-direction: column;
+            gap: .75rem;
+
+            padding-bottom: 1.5rem;
+
+            & > * {
+              display: flex;
+              align-items: center;
+              gap: .5rem;
+            }
+          }
+
+          & .button {
+            text-align: center;
+            line-height: 0;
+            padding-inline: 12px;
+          }
+        }
+      }
+    }
+
+    & > .month-card,
+    .year-card {
+      & .payment-frequency {
+        font: var(--title-xs);
+        color: var(--blue-light);
+      }
+
+      & .button {
+        background-color: var(--blue-dark);
+
+        &:hover::before {
+          background-color: var(--blue-mid);
+        }
+      }
+    }
+
+    & .month-card {
+
+      & .cards-stars-high {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        & > img {
+
+          &:first-child {
+            width: 26px;
+            height: 26px;
+
+            transform: translate(-47px, -22px);
+          }
+
+          &:last-child {
+            width: 13px;
+            height: 13px;
+
+            transform: translate(-82px, 0px);
+          }
+        }
+      }
+    }
+
+    & .year-card {
+
+      & .cards-stars-down {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        & img:first-child {
+          width: 23px;
+          height: 23px;
+
+          transform: translate(55px, 32px);
+        }
+
+        & img:last-child {
+          width: 11px;
+          height: 11px;
+
+          transform: translate(0px, 35px);
+        }
+      }
+    }
+
+    & .main-card {
+      z-index: 2;
+    }
+  }
+}
+
+/* VOU TENTAR FAZER ESSA BAGAÇA DE ANIMAÇÃO SÓ NO DESKTOP E DEPOIS FAZER A RESPONSIVIDADE PRA MOBILE */
+
+@media (width >= 50rem) {
+
+  section#pricing {
+
+    & .cards {
+
+      &:hover .month-card {
+        transform: rotate(-8deg)
+        translateX(-300px);
+
+        transition: transform 1s cubic-bezier(.37,1.36,.32,.96);
+      }
+
+      &:hover .year-card {
+        transform: rotate(8deg)
+        translateX(300px);
+
+        transition: transform 1s cubic-bezier(.37,1.36,.32,.96);
+      }
+
+      & .month-card {
+        transition: transform 1s ease;
+
+        & img {
+          transition: transform .3s ease;
+        }
+
+        &:hover .cards-stars-high img:first-child {
+          transform: translate(-47px, -22px)
+          rotate(-15deg);
+
+          transition: transform .3s ease;
+        }
+
+        &:hover .cards-stars-high img:last-child {
+          transform: translate(-82px, 0px)
+          rotate(15deg);
+
+          transition: transform .3s ease;
+        }
+      }
+
+      & .year-card {
+        transition: transform 1s ease;
+
+        & img {
+          transition: transform .3s ease;
+        }
+
+        &:hover .cards-stars-down img:first-child {
+          transform: translate(55px, 32px)
+          rotate(15deg);
+
+          transition: transform .3s ease;
+        }
+
+        &:hover .cards-stars-down img:last-child {
+          transform: translate(0px, 35px)
+          rotate(-15deg);
+
+          transition: transform .3s ease;
+        }
+      }
+    }
+  }
+}
