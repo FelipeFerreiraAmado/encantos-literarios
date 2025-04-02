@@ -1,0 +1,191 @@
+footer {
+
+  width: 100%;
+  height: 26rem;
+  margin-top: -3rem;
+  overflow: hidden;
+
+  position: relative;
+
+  z-index: -2;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/footer/book-trace-background.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    z-index: -1;
+  }
+
+  & .footer-content {
+    height: calc(100% + 3rem);
+    max-width: 80%;
+    margin-inline: auto;
+    align-items: center;
+    justify-content: space-between;
+
+    & .footer-brand {
+      gap: .75rem;
+
+      & img {
+        width: 16.5rem;
+        height: auto;
+      }
+
+      & .social-medias {
+        justify-content: space-between;
+        align-items: center;
+
+        padding-top: .75rem;
+        border-top: 1px solid var(--shape-stroke);
+
+        & > span {
+          width: 2.5rem;
+          height: 2.5rem;
+          
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          transition: all .3s ease;
+
+          & > a {
+            width: 1.5rem;
+            height: 1.5rem;
+
+            transition: all .3s ease;
+          }
+
+          &:hover {
+            background-color: var(--shape-stroke);
+            border-radius: 100%;
+
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    & .footer-links {
+      align-items: center;
+      justify-content: space-between;
+      gap: 3.5rem;
+
+      & h5 {
+        font: var(--title-xs);
+        margin-bottom: 6px;
+      }
+      
+      & a {
+        font: var(--link);
+        color: var(--blue-light);
+
+        transition: all .3s ease;
+
+        &:hover {
+          color: var(--text-body);
+        }
+      }
+
+      & > div {
+        gap: 22px;
+      }
+    }
+  }
+}
+
+/* hover das midias sociais */
+.social-medias {
+
+  & a.instagram {
+    background-image: url(../assets/icons/instagram.svg);
+  }
+
+  & a.twitter {
+    background-image: url(../assets/icons/twitter.svg);
+  }
+
+  & a.facebook {
+    background-image: url(../assets/icons/facebook.svg);
+  }
+
+  & a.discord {
+    background-image: url(../assets/icons/discord.svg);
+  }
+
+  & a.whatsapp {
+    background-image: url(../assets/icons/whatsapp.svg);
+  }
+
+  & a.mail {
+    background-image: url(../assets/icons/mail.svg);
+  }
+
+  & > span:hover {
+    & a.instagram {
+      background-image: url(../assets/icons/instagram-hover.svg);
+    }
+  
+    & a.twitter {
+      background-image: url(../assets/icons/twitter-hover.svg);
+    }
+  
+    & a.facebook {
+      background-image: url(../assets/icons/facebook-hover.svg);
+    }
+  
+    & a.discord {
+      background-image: url(../assets/icons/discord-hover.svg);
+    }
+  
+    & a.whatsapp {
+      background-image: url(../assets/icons/whatsapp-hover.svg);
+    }
+  
+    & a.mail {
+      background-image: url(../assets/icons/mail-hover.svg);
+    }
+  }
+}
+
+@media (width <= 50rem) {
+  footer {
+    margin-top: -5rem;
+
+    &::before {
+      background-image: url(../assets/footer/footer-background.svg);
+    }
+
+    & .footer-content {
+      height: calc(100% + 5rem);
+
+      max-width: 90%;
+      flex-direction: column;
+      max-height: 80%;
+      gap: 2.5rem;
+
+      padding-top: 6rem;
+
+      & .footer-brand {
+        width: 100%;
+        align-items: center;
+
+        & img {
+          width: 45%;
+        }
+
+        & .social-medias {
+          width: 19.5rem;
+
+        
+        }
+      }
+    }
+  }
+}
